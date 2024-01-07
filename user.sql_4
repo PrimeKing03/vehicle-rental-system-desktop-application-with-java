@@ -1,0 +1,164 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 26, 2023 at 10:46 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `user`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `ID` varchar(30) DEFAULT NULL,
+  `NAME` varchar(30) NOT NULL,
+  `ADDRESS` varchar(30) NOT NULL,
+  `NIC` varchar(30) NOT NULL,
+  `PHONE` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`ID`, `NAME`, `ADDRESS`, `NIC`, `PHONE`) VALUES
+('1', 'Janaka', '123 Main St colombo', '1234567890 ', '555-555-5555'),
+('2', 'Malsha', '456  St Kandy', '9876543210 ', '555-123-4567'),
+('3', 'Bandara', '789 Silvester St', '4567890123', '555-789-1234'),
+('4', 'Ann', '101 Pine St', '1977665321546', '555-987-6543'),
+('5', 'Saman', '246 Maple St , colombo', '19881112223333', '555-654-7890'),
+('6', 'Emily  ', '555 church St', '19869998887777', '555-888-9456'),
+('7', 'Michael  ', '888 Central St', '20004443332222 ', '555-222-3333'),
+('8', 'Sarah', '333 Seewali St ', '19992224445555', '555-888-9999'),
+('9', 'Daniel', '777 Tissa St', '2000944556212', '555-111-4444'),
+('10', 'Hashini', '999 Spruce St', '19911234567890', '555-666-7777');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `userid` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`userid`, `password`) VALUES
+('', ''),
+('', ''),
+('sharvajen', 'sharu123'),
+('raja', '12345678'),
+('kashmira', 'kash123'),
+('dulaksha', 'dula123'),
+('shaethayine', 'shae123');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rentel1`
+--
+
+CREATE TABLE `rentel1` (
+  `VEHICLENO` varchar(30) NOT NULL,
+  `CUSTOMERID` varchar(30) NOT NULL,
+  `ISSUEDATE` date NOT NULL,
+  `RENTELCHARGE` varchar(30) NOT NULL,
+  `RENTELADVANCE` varchar(30) NOT NULL,
+  `BALANCE` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `rentel1`
+--
+
+INSERT INTO `rentel1` (`VEHICLENO`, `CUSTOMERID`, `ISSUEDATE`, `RENTELCHARGE`, `RENTELADVANCE`, `BALANCE`) VALUES
+('PG-6580', '1', '2023-10-10', '20000', '10000', '10000'),
+('KV-9032', '5', '2023-10-27', '35000', '15000', '20000'),
+('KQ-2345', '3', '2023-10-21', '20000', '5000', '15000'),
+('252-9530', '8', '2023-10-10', '50000', '15000', '35000'),
+('PQ-1727', '9', '2023-09-10', '15000', '10000', '5000'),
+('CBJ-5151', '4', '2023-09-08', '80000', '20000', '60000'),
+('CAA-7585', '2', '2023-10-11', '50000', '10000', '40000'),
+('KJ-3540', '6', '2023-10-25', '45000', '10000', '35000'),
+('CBH-1777', '7', '2023-10-25', '110000', '40000', '70000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `try1`
+--
+-- Error reading structure for table user.try1: #1932 - Table &#039;user.try1&#039; doesn&#039;t exist in engine
+-- Error reading data for table user.try1: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `user`.`try1`&#039; at line 1
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user login`
+--
+-- Error reading structure for table user.user login: #1932 - Table &#039;user.user login&#039; doesn&#039;t exist in engine
+-- Error reading data for table user.user login: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `user`.`user login`&#039; at line 1
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle`
+--
+-- Error reading structure for table user.vehicle: #1932 - Table &#039;user.vehicle&#039; doesn&#039;t exist in engine
+-- Error reading data for table user.vehicle: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `user`.`vehicle`&#039; at line 1
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle1`
+--
+
+CREATE TABLE `vehicle1` (
+  `regno` varchar(30) NOT NULL,
+  `brand` varchar(30) NOT NULL,
+  `model` varchar(30) NOT NULL,
+  `type` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `vehicle1`
+--
+
+INSERT INTO `vehicle1` (`regno`, `brand`, `model`, `type`) VALUES
+('CAA-7585', 'TOYOTA', 'ALLION', 'CAR'),
+('PG-6580', 'TOYOTA', 'KDH', 'VAN'),
+('CBE-7489', 'AUDI', 'A4', 'CAR'),
+('KJ-3540', 'NISSAN', 'BLUE BIRD', 'CAR'),
+('CBJ-5151', 'JEEP', 'RENEGADE', 'OFFROAD '),
+('KV-9032', 'HONDA', 'INSIGHT', 'CAR'),
+('KQ-2345', 'HYUNDAI', 'TUCSON', 'SUV'),
+('PQ-1727', 'SUZUKI', 'EVERY', 'MINI VAN'),
+('CBH-1777', 'TOYOTA', 'PRADO', 'SUV'),
+('252-9530', 'TOYOTA', 'DOLPHIN', 'VAN');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
